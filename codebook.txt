@@ -4,8 +4,7 @@ DataScienceCoursera2 - Code book
 
 1. Original dataset
 2. The analysis script run_analysis.R
-3. The first tidy dataset created by the analysis script
-4. The second tidy dataset created by the analysis script
+3. The tidy dataset created by the analysis script
 
 Coursera assignment by Lucien De Brot
 
@@ -16,6 +15,14 @@ The original dataset is included in the "data" folder.
 Please refer to the Readme.txt in the data folder 
 to get more information about the original dataset.
 
+- 30 volunteers
+- six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) activity_labels.txt
+- 6 variable : triax_accel, triax_ang, 561feat (features.txt), activity, subject_id
+
+Training : 7352 observations
+Test : 2947 observations
+
+
 ====================================================
 2. The analysis script run_analysis.R
 ----------------------------------------------------
@@ -23,21 +30,53 @@ The filename of the analysis script is run_analysis.R
 
 What the analysis script does :
 - Merges the training and the test sets to create one data set.
-- Extracts only the measurements on the mean and standard deviation for each measurement. 
+- Extracts only the measurements on the mean and standard deviation for each measurement
+  (therefore the separate datasets in the original "Inertial Signals" folders 
+  are not included during the process). 
 - Uses descriptive activity names to name the activities in the data set
 - Appropriately labels the data set with descriptive variable names. 
 - Based on the dataset created above, generates a second, 
 independent tidy data set with the average of each variable 
-for each activity and each subject.
+for each activity and each subject. The new data set is saved in a file
+called "newdataset.txt" located in the working directory.
 
-
-====================================================
-3. The first tidy dataset created by the analysis script
-----------------------------------------------------
-
-
+--> see script code for detailed description of data processing.
 
 ====================================================
-4. The second tidy dataset created by the analysis script
+3. The tidy dataset created by the analysis script
 ----------------------------------------------------
 
+The dataset "newdataset.txt", created by the analysis script "run_analysis.R"
+contains the average of each variable for each activity and each subject.
+
+- See six activies above
+- There are 30 subjects (see above)
+- The mean and standard deviation values of the following variables are included in the newdataset.txt file:
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+Note from the original dataset:
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
