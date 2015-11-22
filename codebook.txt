@@ -1,0 +1,43 @@
+----------------------------------------------------
+DataScienceCoursera2 - Code book
+----------------------------------------------------
+
+1. Original dataset
+2. The analysis script run_analysis.R
+3. The first tidy dataset created by the analysis script
+4. The second tidy dataset created by the analysis script
+
+Coursera assignment by Lucien De Brot
+
+====================================================
+1. Original dataset
+----------------------------------------------------
+The original dataset is included in the "data" folder.
+Please refer to the Readme.txt in the data folder 
+to get more information about the original dataset.
+
+====================================================
+2. The analysis script run_analysis.R
+----------------------------------------------------
+The filename of the analysis script is run_analysis.R
+
+What the analysis script does :
+- Merges the training and the test sets to create one data set.
+- Extracts only the measurements on the mean and standard deviation for each measurement. 
+- Uses descriptive activity names to name the activities in the data set
+- Appropriately labels the data set with descriptive variable names. 
+- Based on the dataset created above, generates a second, 
+independent tidy data set with the average of each variable 
+for each activity and each subject.
+
+
+====================================================
+3. The first tidy dataset created by the analysis script
+----------------------------------------------------
+
+
+
+====================================================
+4. The second tidy dataset created by the analysis script
+----------------------------------------------------
+
